@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  done: false
+  memo: MyText
+  limit: 2019-10-17 16:29:42
+
+two:
+  title: MyString
+  done: false
+  memo: MyText
+  limit: 2019-10-17 16:29:42
