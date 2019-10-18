@@ -4,7 +4,14 @@
     <li style="list-style:none;border:1px gray solid;border-radius:3px;margin:5px 5%;padding:5px 10px;">
       <input type="checkbox" name="done" <%= task.done ? checked="checked" : "" %>>
       <%= task.title %>
-      <%=%>
+      <%= link_to "Detail", task , class: "task_detail" %>
     </li>
   <% end %>
 </ul>
+
+
+<style>
+.task_detail{
+  float: right;
+}
+</style>
