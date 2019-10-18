@@ -1,10 +1,10 @@
 <h1>Task index</h1>
 <ul>
-  <% @task.each do |task| %>
+  <% @task_all.each do |task| %>
     <li style="list-style:none;border:1px gray solid;border-radius:3px;margin:5px 5%;padding:5px 10px;">
       <input type="checkbox" name="done" <%= task.done ? checked="checked" : "" %>>
       <%= task.title %>
-      <%= task.memo %>
+      <%=%>
     </li>
   <% end %>
 </ul>
