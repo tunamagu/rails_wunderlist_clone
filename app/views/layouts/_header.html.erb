@@ -1,0 +1,41 @@
+<header id="header" class="header">
+  <div class="container header-container">
+    <%= link_to 'WUNDERLIST', root_path, id: "logo" %>
+    <nav>
+      <ul class="h-nav-ul">
+        <% if current_user %>
+          <li><%= link_to "new post", new_task_url %></li>
+        <% else %>
+          <li>LogIn</li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .header {
+    background: rgb(98, 98, 98);
+    color: white;
+  }
+  .header-container {
+    display: flex;
+    align-item: center;
+    justify-content: space-between;
+  }
+  .h-nav-ul li {
+    list-style: none;
+  }
+  .h-nav-ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  #logo{
+    text-decoration: none;
+    color: white;
+  }
+</style>
