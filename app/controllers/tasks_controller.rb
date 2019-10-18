@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
   def index
-    @task = current_user.task.all
+    if current_user
+      @task = current_user.task.all
+    else
+      flash[:notice] = "Please Log in"
+      redirect_to new_user_session_url
+    end
   end
 
   def new
