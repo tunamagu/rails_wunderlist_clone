@@ -9,9 +9,18 @@ class TasksController < ApplicationController
   end
 
   def new
+    @task = current_user.task.new
   end
 
   def create
+    @task = current_user.task.create(task_params)
+    if @task.save
+      flash[:notice] = "Success Create New Task"
+      redirect_to root_url
+    else
+      flash[:error] = "Error Create New Task"
+      redirect_to root_url
+    end
   end
 
   def show
@@ -26,4 +35,10 @@ class TasksController < ApplicationController
 
   def destroy
   end
+
+  private
+
+    def task_params
+      params.require(:task).permit(:title,:limit_at,:memo)
+    end
 end
