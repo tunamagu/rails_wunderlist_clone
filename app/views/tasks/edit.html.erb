@@ -1,2 +1,15 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>Task Edit</h1>
+
+<%= form_for(@task) do |f| %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :limit_at %>
+      <%= f.datetime_select :limit_at %>
+
+      <%= f.label :memo %>
+      <%= f.text_field :memo %>
+
+      <%= f.submit "Update my task", class: "btn btn-primary" %>
+<% end %>

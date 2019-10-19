@@ -19,7 +19,7 @@ class TasksController < ApplicationController
       redirect_to root_url
     else
       flash[:error] = "Error Create New Task"
-      redirect_to root_url
+      render 'new'
     end
   end
 
@@ -28,9 +28,18 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id])
+    if @task.update_attributes(task_params)
+      flash[:notice] = "Successlly Task Update"
+      redirect_to root_url
+    else
+      flash[:error] = "Error Task Update"
+      render 'edit'
+    end
   end
 
   def destroy

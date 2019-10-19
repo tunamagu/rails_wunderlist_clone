@@ -7,13 +7,14 @@
       <%= link_to "Detail", task , class: "task_detail" %>
       <% task.done ? "task_true" : "task_false" %>
       <%= link_to "Done", done_task_url(id: task.id) , class: "task_done" %>
+      <%= link_to "Edit", edit_task_url(id: task.id) , class: "task_edit_button" %>
     </li>
   <% end %>
 </ul>
 
 
 <style>
-.task_detail, .task_done{
+.task_detail, .task_done, .task_edit_button{
   float: right;
   margin-right: 10px;
 }
