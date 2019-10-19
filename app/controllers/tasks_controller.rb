@@ -36,6 +36,16 @@ class TasksController < ApplicationController
   def destroy
   end
 
+  def done
+    @task = Task.find(params[:id])
+    @task.done = !(@task.done)
+    if @task.save
+      redirect_to root_url
+    else
+      flash[:error] = "Failed Task Done"
+    end
+  end
+
   private
 
     def task_params
