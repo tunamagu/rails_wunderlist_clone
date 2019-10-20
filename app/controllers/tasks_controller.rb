@@ -43,6 +43,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    Task.find(params[:id]).destroy
+    flash[:notice] = "Successlly Delete Task"
+    redirect_to root_url
   end
 
   def done
@@ -52,6 +55,7 @@ class TasksController < ApplicationController
       redirect_to root_url
     else
       flash[:error] = "Failed Task Done"
+      redirect_to root_url
     end
   end
 

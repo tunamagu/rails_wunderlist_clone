@@ -3,3 +3,5 @@
 <p><%= @task.done %></p>
 <p><%= @task.limit_at %></p>
 <p><%= @task.memo %></p>
+
+<%= link_to "Delete", @task, method: :delete, data: {comfirm: "You Sure?"} %>
