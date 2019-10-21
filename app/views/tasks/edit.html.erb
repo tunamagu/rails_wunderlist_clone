@@ -11,5 +11,8 @@
       <%= f.label :memo %>
       <%= f.text_field :memo %>
 
-      <%= f.submit "Update my task", class: "btn btn-primary" %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+
+      <%= f.submit "Update task", class: "btn btn-primary" %>
 <% end %>

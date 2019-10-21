@@ -62,6 +62,6 @@ class TasksController < ApplicationController
   private
 
     def task_params
-      params.require(:task).permit(:title,:limit_at,:memo)
+      params.require(:task).permit(:title,:limit_at,:memo,:image)
     end
 end
