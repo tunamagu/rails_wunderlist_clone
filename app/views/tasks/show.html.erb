@@ -1,0 +1,11 @@
+<h1>Task Detail</h1>
+<h2><%= @task.title %></h2>
+<p><%= @task.done %></p>
+<p><%= @task.limit_at %></p>
+<p><%= @task.memo %></p>
+
+<% if @task.image? %>
+  <%= image_tag @task.image.url %>
+<% end %>
+
+<%= link_to "Delete", @task, method: :delete, data: {comfirm: "You Sure?"} %>

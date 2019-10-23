@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+# image uploader gem
+gem 'carrierwave'
+gem 'rmagick'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
