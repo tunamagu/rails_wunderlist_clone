@@ -4,7 +4,8 @@
 <p><%= @task.limit_at %></p>
 <p><%= @task.memo %></p>
 
-<% if @task.image? %>
+<% if @task.image.url %>
+  <%= link_to "image_delete", image_delete_url(id: @task.id), method: :delete, data: { comfirm: "Image Delete?" }%>
   <%= image_tag @task.image.url %>
 <% end %>
 
