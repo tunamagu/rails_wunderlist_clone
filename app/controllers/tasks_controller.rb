@@ -59,6 +59,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def image_delete
+    @task = Task.find(params[:id])
+    @task.image = nil
+    if @task.save
+      redirect_to root_url
+    else
+      flash[:error] = "Failed Image Delete"
+      render 'show'
+    end
+  end
+
   private
 
     def task_params
